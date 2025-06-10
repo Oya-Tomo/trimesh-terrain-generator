@@ -9,4 +9,10 @@ Pyramid shape based terrain generation.
 
 ## sample
 
-![image](./assets/example.png)
+### Simple Pyramid
+
+![image](./assets/pyramid_example.png)
+
+### Custom height Pyramid
+
+![image](./assets/pyramid_custom_example.png)
