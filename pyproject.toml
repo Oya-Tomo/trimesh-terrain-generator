@@ -1,0 +1,10 @@
+[project]
+name = "trimesh-terrain-generator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "trimesh[easy]",
+    "pyglet<2.0.0"
+]
