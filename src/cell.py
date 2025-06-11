@@ -61,4 +61,3 @@ if __name__ == "__main__":
     heights = [[random.uniform(0, 0.1) for _ in range(20)] for _ in range(20)]
     terrain = create_cell_terrain(cell_heights=heights)
     terrain.show()
-    terrain.export("cell_terrain.stl")
