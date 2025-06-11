@@ -68,13 +68,15 @@ def create_pyramid_terrain(
     c4 = len(verts) - 1
     faces.extend(rect_coord_to_face(c1, c2, c3, c4))
 
-    return trimesh.Trimesh(vertices=verts, faces=faces, process=False)
+    terrain = trimesh.Trimesh(vertices=verts, faces=faces, process=False)
+    terrain.apply_translation([size / 2, size / 2, 0])
+    return terrain
 
 
 if __name__ == "__main__":
     terrain = create_pyramid_terrain(
         size=10,
-        step_tread=[0.8, 0.8, 0.8, 0.8, 0.8],
-        step_heights=[0.0, -0.5, 0.0, 0.5, 0.0, -0.5],
+        step_tread=[0.4 for i in range(10)],
+        step_heights=[0.15 * i for i in range(11)],
     )
     terrain.show()
