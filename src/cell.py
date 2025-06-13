@@ -52,7 +52,7 @@ def create_cell_terrain(
                     *(rect_coord_to_face(c4, c8, c5, c1)),
                 ]
             )
-    return trimesh.Trimesh(vertices=verts, faces=faces, process=False)
+    return trimesh.Trimesh(vertices=verts, faces=faces, process=True, validate=True)
 
 
 if __name__ == "__main__":

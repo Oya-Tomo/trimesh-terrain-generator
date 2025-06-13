@@ -68,7 +68,7 @@ def create_pyramid_terrain(
     c4 = len(verts) - 1
     faces.extend(rect_coord_to_face(c1, c2, c3, c4))
 
-    terrain = trimesh.Trimesh(vertices=verts, faces=faces, process=False)
+    terrain = trimesh.Trimesh(vertices=verts, faces=faces, process=True, validate=True)
     terrain.apply_translation([size / 2, size / 2, 0])
     return terrain
 
