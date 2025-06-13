@@ -37,7 +37,7 @@ if __name__ == "__main__":
     cell_terrain = cell.create_cell_terrain(
         size=10,
         cell_heights=[
-            [random.randint(0, 2) / 10 for x in range(10)] for y in range(10)
+            [random.randint(0, 10) / 100 for x in range(10)] for y in range(10)
         ],
     )
     rect_terrain = pyramid.create_pyramid_terrain(
