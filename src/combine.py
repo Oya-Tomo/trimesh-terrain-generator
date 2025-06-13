@@ -27,12 +27,12 @@ if __name__ == "__main__":
     pyramid_terrain = pyramid.create_pyramid_terrain(
         size=10,
         step_tread=[0.4 for i in range(10)],
-        step_heights=[0.15 * i for i in range(11)],
+        step_heights=[0.2 * i for i in range(11)],
     )
     depression_terrain = pyramid.create_pyramid_terrain(
         size=10,
         step_tread=[0.4 for i in range(10)],
-        step_heights=[-0.15 * i for i in range(11)],
+        step_heights=[-0.2 * i for i in range(11)],
     )
     cell_terrain = cell.create_cell_terrain(
         size=10,
@@ -47,20 +47,20 @@ if __name__ == "__main__":
     )
 
     meshes = [
-        pyramid_terrain,
         cell_terrain,
-        depression_terrain,
         rect_terrain,
+        depression_terrain,
+        pyramid_terrain,
     ]
     terrain_meshes = []
 
-    rows = 6
-    cols = 6
+    rows = 3
+    cols = 3
 
     for y in range(rows):
         for x in range(cols):
             terrain_meshes.append(
-                meshes[(y + x) % len(meshes)]
+                meshes[(y * rows + x) % len(meshes)]
                 .copy()
                 .apply_translation([x * 10, y * 10, 0])
             )
