@@ -16,3 +16,11 @@ Pyramid shape based terrain generation.
 ### Custom height Pyramid
 
 ![image](./assets/pyramid_custom_example.png)
+
+### Cell Field
+
+![image](./assets/cell_example.png)
+
+### Combined Terrain
+
+![image](./assets/combined_example.png)
