@@ -41,5 +41,5 @@ if __name__ == "__main__":
     step_tread = [0.4 for _ in range(10)]
     bottom_thickness = 1.0
 
-    mesh = create_boxes_pyramid(size, step_heights, step_tread, bottom_thickness)
-    mesh.show()
+    terrain = create_boxes_pyramid(size, step_heights, step_tread, bottom_thickness)
+    terrain.show()
