@@ -22,19 +22,20 @@ def combine_meshes(meshes: list[trimesh.Trimesh]) -> trimesh.Trimesh:
 if __name__ == "__main__":
     import random
     import pyramid
-    import cell
+    import boxes_pyramid
+    import boxes_cell
 
-    pyramid_terrain = pyramid.create_pyramid_terrain(
+    pyramid_terrain = boxes_pyramid.create_boxes_pyramid(
         size=10,
         step_tread=[0.4 for i in range(10)],
-        step_heights=[0.2 * i for i in range(11)],
+        step_heights=[0.15 for i in range(10)],
     )
     depression_terrain = pyramid.create_pyramid_terrain(
         size=10,
         step_tread=[0.4 for i in range(10)],
         step_heights=[-0.2 * i for i in range(11)],
     )
-    cell_terrain = cell.create_cell_terrain(
+    cell_terrain = boxes_cell.create_cell_terrain(
         size=10,
         cell_heights=[
             [random.randint(0, 10) / 100 for x in range(10)] for y in range(10)
@@ -43,7 +44,7 @@ if __name__ == "__main__":
     rect_terrain = pyramid.create_pyramid_terrain(
         size=10,
         step_tread=[0.4 for i in range(10)],
-        step_heights=[0.15 * (i % 2) for i in range(11)],
+        step_heights=[0.1 * (i % 2) for i in range(11)],
     )
 
     meshes = [
